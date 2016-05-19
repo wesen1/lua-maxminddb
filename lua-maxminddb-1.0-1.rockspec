@@ -37,6 +37,8 @@ build =
         LUA_BINDIR="$(LUA_BINDIR)",
         LUA_INCDIR="$(LUA_INCDIR)",
         LUA="$(LUA)",
+        LIBMAXMINDDB_LIBDIR="$(LIBMAXMINDDB_LIBDIR)",
+        LIBMAXMINDDB_INCDIR="$(LIBMAXMINDDB_INCDIR)",
   	},
   	install_variables =
   	{

@@ -5,13 +5,14 @@
 #CFLAGS ?= -g
 
 maxminddb.so: maxminddb.c
-	$(CC) $(LIBFLAG) -fPIC -std=c99 $(CFLAGS)  $< -o $@ $(LDFLAGS) -L$(LIBMAXMINDDB_LIBDIR) -I$(LUA_INCDIR) -I$(LIBMAXMINDDB_INCDIR) -lmaxminddb
+	#$(CC) $(LIBFLAG) -std=c99 $(CFLAGS)  $< -o $@ $(LDFLAGS) -L$(LIBMAXMINDDB_LIBDIR) -I$(LUA_INCDIR) -I$(LIBMAXMINDDB_INCDIR) -lmaxminddb
+	$(CC) $(LIBFLAG) $(CFLAGS)  $< -o $@ $(LDFLAGS) -L$(LIBMAXMINDDB_LIBDIR) -I$(LUA_INCDIR) -I$(LIBMAXMINDDB_INCDIR) -lmaxminddb
 
 install:
 	#install -d $(DESTDIR)$(LUA_CMOD)
 	#install -c maxminddb.so $(DESTDIR)$(LUA_CMOD)
 	#install -d $(LIBDIR)
-	install -c maxminddb.so $(LIBDIR)
+	install -c maxminddb.so $(INST_LIBDIR)
 
 clean:
 	rm maxminddb.so
