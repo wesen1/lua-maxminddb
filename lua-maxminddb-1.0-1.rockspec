@@ -3,7 +3,8 @@ version = "1.0-1"
 source =
 {
 	url = "git://github.com/GroM/lua-maxminddb",
-	tag = "v1.0"
+	-- tag = "v1.0"
+	branch = "develop"
 }
 description =
 {
