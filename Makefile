@@ -1,15 +1,17 @@
-LUA_PKG		?= lua5.2
-LUA_CFLAGS	?= $(shell pkg-config --cflags $(LUA_PKG))
-LUA_CMOD	?= $(shell pkg-config --variable=INSTALL_CMOD $(LUA_PKG))
+#LUA_PKG		?= lua5.2
+#LUA_CFLAGS	?= $(shell pkg-config --cflags $(LUA_PKG))
+#LUA_CMOD	?= $(shell pkg-config --variable=INSTALL_CMOD $(LUA_PKG))
 
-CFLAGS ?= -g
+#CFLAGS ?= -g
 
 maxminddb.so: maxminddb.c
-	$(CC) $(CFLAGS) -fPIC -std=c99 $(LUA_CFLAGS) -shared $< -o $@ $(LDFLAGS) -lmaxminddb
+	$(CC) $(LIBFLAG) -fPIC -std=c99 $(CFLAGS)  $< -o $@ $(LDFLAGS) -L$(LIBMAXMINDDB_LIBDIR) -I$(LUA_INCDIR) -I$(LIBMAXMINDDB_INCDIR) -lmaxminddb
 
 install:
-	install -d $(DESTDIR)$(LUA_CMOD)
-	install -c maxminddb.so $(DESTDIR)$(LUA_CMOD)
+	#install -d $(DESTDIR)$(LUA_CMOD)
+	#install -c maxminddb.so $(DESTDIR)$(LUA_CMOD)
+	#install -d $(LIBDIR)
+	install -c maxminddb.so $(LIBDIR)
 
 clean:
 	rm maxminddb.so
