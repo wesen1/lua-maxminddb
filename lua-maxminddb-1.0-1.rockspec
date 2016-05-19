@@ -7,7 +7,7 @@ source =
 }
 description =
 {
-	summary = "Lua bindings to MaxMind DB v2"
+	summary = "Lua bindings to MaxMind DB v2",
 	detailed = [[
 		Lua bindings to MaxMind DB v2
 	]],
