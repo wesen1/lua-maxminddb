@@ -1,5 +1,6 @@
 #include <netdb.h>
 #include <string.h>
+#include <errno.h>
 
 #include <lua.h>
 #include <lauxlib.h>
