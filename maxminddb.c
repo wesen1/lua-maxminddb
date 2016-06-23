@@ -136,8 +136,9 @@ static int mmdb_lookup(lua_State *L)
 	MMDB_lookup_result_s *res = allocudata(L, sizeof(MMDB_lookup_result_s), MMDB_RESULT_CLASS);
 
 	*res = MMDB_lookup_string(mmdb, addr, &gaierr, &mmerr);
-	if (gaierr != 0) {
-		lua_pushstring(L, gai_strerror(gaierr));
+	if (gaierr)
+	{
+		lua_pushstring(L, (gaierr == EAI_SYSTEM) ? strerror(errno) : gai_strerror(gaierr));
 		return lua_error(L);
 	}
 	if (!res->found_entry) return mm_error(L, mmerr);
