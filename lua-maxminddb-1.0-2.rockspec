@@ -2,7 +2,7 @@ package = "lua-maxminddb"
 version = "1.0-2"
 source =
 {
-	url = "git://github.com/GroM/lua-maxminddb",
+	url = "git://github.com/wesen1/lua-maxminddb",
 	-- tag = "v1.0"
 	branch = "develop"
 }
@@ -12,7 +12,7 @@ description =
 	detailed = [[
 		Lua bindings to MaxMind DB v2
 	]],
-	homepage = "https://github.com/GroM/lua-maxminddb",
+	homepage = "https://github.com/wesen1/lua-maxminddb",
 	license = "LGPL"
 }
 dependencies =
